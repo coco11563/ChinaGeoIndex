@@ -24,6 +24,7 @@ public class getTree {
         String[] tempList;
         while ((temp = reader.readLine()) != null) {
             tempList = temp.split(",");
+            if (tempList.length < 4) break;
             double lat = Double.parseDouble(tempList[0]);
             double lon = Double.parseDouble(tempList[1]);
             try {

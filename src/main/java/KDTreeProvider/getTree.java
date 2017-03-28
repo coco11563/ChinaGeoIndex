@@ -10,12 +10,13 @@ import java.util.List;
 
 import static Util.FileUtil.readFile;
 
+
 /**
  * Created by Sha0w on 2017/3/24.
  *
  */
 public class getTree {
-    public KDTree<TestPoint> getNormalKDTree(int k, String fileName) throws IOException {
+    private KDTree<TestPoint> getNormalKDTree(int k, String fileName) throws IOException {
         InputStream inputStream = this.getClass().getResourceAsStream("/" + fileName);
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream,"UTF-8"));
         KDTree<TestPoint> kdTree = new KDTree<TestPoint>(k);
@@ -34,11 +35,11 @@ public class getTree {
         return kdTree;
     }
 
-    public KDTree<TestPoint> getInnerConfigNormalKDTree() throws IOException {
-        return getNormalKDTree(2, "knn.txt");
+    public static KDTree<TestPoint> getInnerConfigNormalKDTree() throws IOException {
+        return new getTree().getNormalKDTree(2, "knn.txt");
     }
 
-    public KDTree<TestPoint> getOutterConfigNormalKDTree(int k, String fileName) throws IOException {
+    public static KDTree<TestPoint> getOutterConfigNormalKDTree(int k, String fileName) throws IOException {
         List<TestPoint> li = readFile(fileName);
         KDTree<TestPoint> kdTree = new KDTree<TestPoint>(k);
         for (TestPoint tp : li) {

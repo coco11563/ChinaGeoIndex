@@ -1,4 +1,4 @@
-package main;
+package KDTreeProvider;
 
 import datastruct.KDTree;
 import datastruct.KeyDuplicateException;
@@ -14,7 +14,7 @@ import static Util.FileUtil.readFile;
  * Created by Sha0w on 2017/3/24.
  *
  */
-public class ChinaKDTreeProvider {
+public class getTree {
     public KDTree<TestPoint> getNormalKDTree(int k, String fileName) throws IOException {
         InputStream inputStream = this.getClass().getResourceAsStream("/" + fileName);
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream,"UTF-8"));
@@ -35,7 +35,7 @@ public class ChinaKDTreeProvider {
     }
 
     public KDTree<TestPoint> getInnerConfigNormalKDTree() throws IOException {
-        return getNormalKDTree(3, "knn.txt");
+        return getNormalKDTree(2, "knn.txt");
     }
 
     public KDTree<TestPoint> getOutterConfigNormalKDTree(int k, String fileName) throws IOException {

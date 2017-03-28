@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Sha0w on 2017/2/27.
  */
 public class FileUtil {
-    private static String outputpath = "./src/main/resources/output";
+    private static String outputpath = "./src/KDTreeProvider/resources/output";
     public static void FileWrite(String message, String filename) {
         File f = new File(outputpath + "/" + filename);
         if (!f.exists()) {
